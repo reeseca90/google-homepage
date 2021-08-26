@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <style>
+            body {
+                color: rgb(34, 34, 34);
+                background-color: white;
+                font-family: 'Roboto', sans-serif;
+                font-size: 14px;
+            }
+            .container {
+                display: grid;                
+                width: 100%;
+                min-height: 450px;
+                height: 98vh;
+                text-align: center;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: 46px 1fr 46px;
+                grid-template-areas:
+                    "topleft . topright"
+                    "main main main"
+                    "bottomleft bottomcenter bottomright"
+                ;
+            }
+            .header-left {
+                justify-self: left;
+                grid-area: topleft;
+            }
+            .header-right {
+                justify-self: right;
+                grid-area: topright;
+            }
+            .main-content {
+                width: 100%;
+                grid-area: main;
+                padding-top: 150px;
+                text-align: center;
+            }
+            .footer-center {
+                background-color: #ececec;
+                grid-area: bottomcenter;
+                align-self: stretch;
+                height: 46px;
+                line-height: 46px;
+                vertical-align: middle;
+            }
+            .footer-left {
+                background-color: #ececec;
+                grid-area: bottomleft;
+                text-align: left;
+                align-self: stretch;
+                height: 46px;
+                line-height: 46px;
+                vertical-align: middle;
+            }
+            .footer-right {
+                background-color: #ececec;
+                grid-area: bottomright;
+                text-align: right;
+                align-self: stretch;
+                height: 46px;
+                line-height: 46px;
+                vertical-align: middle;
+            }
+            .searchbox {
+                margin: 25px;
+                padding: 10px;
+                width: 40%;
+                border-radius: 100px;
+                border-width: 1px;
+                border-color: darkgray;
+                border-style: solid
+            }
+            .linkmargin {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            a:hover, button:hover {
+                cursor: pointer;
+            }
+            a {
+                text-decoration: none;
+                color: rgb(34, 34, 34);
+            }
+            @media (max-width: 1000px) {
+                .container {
+                    grid-template-columns: auto auto;
+                    grid-template-areas:
+                        "topleft topright"
+                        "main main"
+                        "bottomcenter bottomcenter"
+                        "bottomleft bottomright"
+                    ;
+                }
+            }
+            @media (max-width: 750px) {
+                .container {
+                    grid-template-columns: auto auto;
+                    grid-template-areas: 
+                        "topleft topright"
+                        "main main"
+                        "bottomcenter bottomcenter"
+                        "bottomleft bottomleft"
+                        "bottomright bottomright";
+                }
+                .footer-right {
+                    justify-self: stretch;
+                    text-align: center;
+                }
+                .footer-left {
+                    justify-self: stretch;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header-left">
+                <a href="" class="linkmargin">About</a>
+                <a href="" class="linkmargin">Store</a>
+            </div>
+            <div class="header-right">
+                <a href="" class="linkmargin">Gmail</a>
+                <a href="" class="linkmargin">Images</a>
+                <a href="" class="linkmargin">Apps</a>
+                <a href="" class="linkmargin">Account</a>
+            </div>
+            <div class="main-content">
+                <div><img class="mainmargin" src="googlelogo.png"></div>
+                <div><input type="search" class="searchbox"></div>
+                <button style="padding: 10px">Google Search</button>
+                <button style="padding: 10px">I'm Feeling Lucky</button>
+            </div>
+            <div class="footer-center">
+                <img src="leaf.png">
+                Carbon neutral since 2007
+            </div>
+            <div class="footer-left">
+                <a href="" class="linkmargin">Advertising</a>
+                <a href="" class="linkmargin">Business</a>
+                <a href="" class="linkmargin">How Search Works</a>
+            </div>
+            <div class="footer-right">
+                <a href="" class="linkmargin">Privacy</a>
+                <a href="" class="linkmargin">Terms</a>
+                <a href="" class="linkmargin">Settings</a>
+            </div>
+        </div>
+    </body>
+</html>
